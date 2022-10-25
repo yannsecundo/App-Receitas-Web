@@ -1,12 +1,11 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
-import Login from '../components/Login';
+import Footer from '../components/Footer';
 
-export default function Page() {
+function Recipes() {
   return (
     <div>
-      <Login />
-      <SearchBar />
+      <Footer />
     </div>
   );
 }
+export default Recipes;
