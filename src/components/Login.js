@@ -21,7 +21,7 @@ function Login() {
     localStorage.setItem('user', JSON.stringify({ email }));
     localStorage.setItem('mealsToken', '1');
     localStorage.setItem('cocktaislToken', '1');
-    history.push('/meals');
+    history.push('/foods');
   }, [email, history]);
 
   useEffect(() => {
