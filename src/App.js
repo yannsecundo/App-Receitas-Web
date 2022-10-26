@@ -8,7 +8,7 @@ import DoneRecipes from './pages/DoneRecipes';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import Recipes from './pages/Recipes';
 import ProfilePage from './pages/ProfilePage';
-import { AppProvider } from './context/AppProvider';
+import AppProvider from './context/AppProvider';
 
 function App() {
   return (
