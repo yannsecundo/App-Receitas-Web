@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { screen, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import renderWithContext from './renderWithContext';
-import { App } from '../App';
+import App from '../App';
 import Recipes from '../pages/Recipes';
 import meals from '../../cypress/mocks/meals';
 import drinks from '../../cypress/mocks/drinks';
