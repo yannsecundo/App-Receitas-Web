@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import CategoryControls from '../components/CategoryControls';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
@@ -10,13 +11,15 @@ import AppContext from '../context/AppContext';
 function Recipes() {
   const {
     title,
-    recipe,
     setTitle,
+    recipeList,
     categoryClicked,
   } = useContext(AppContext);
 
   useEffect(() => {
-    setTitle('meals');
+    const actualPath = window.location.pathname;
+    if (actualPath === '/meals') { setTitle('meals'); }
+    if (actualPath === '/drinks') { setTitle('drinks'); }
   }, [setTitle]);
 
   return (
@@ -24,17 +27,18 @@ function Recipes() {
       <Header search="true" />
       <h1 data-testId="page-title">
         {
-          (title === 'meals') ? 'Meals' : 'Drinks'
+          (title === 'drinks') ? 'Drinks' : 'Meals'
         }
       </h1>
+      <CategoryControls />
       {
         categoryClicked
           ? <ResultsByCategory />
           : (
             <section>
               {
-                recipe !== null && title === 'drinks'
-          && recipe.map((_recipe, index) => (
+                recipeList !== null && title === 'drinks'
+          && recipeList.map((_recipe, index) => (
             <Link
               to={ `/${title}/${_recipe.idDrink}` }
               key={ `${index}-recipe-card` }
@@ -48,8 +52,8 @@ function Recipes() {
           ))
               }
               {
-                recipe !== null && title === 'meals'
-          && recipe.map((_recipe, index) => (
+                recipeList !== null && title === 'meals'
+          && recipeList.map((_recipe, index) => (
             <Link
               to={ `/${title}/${_recipe.idMeal}` }
               key={ `${index}-recipe-card` }
@@ -70,3 +74,12 @@ function Recipes() {
   );
 }
 export default withRouter(Recipes);
+
+//      {recipeList && recipeList.slice(0, twelve).map((e, i) => (
+//        <RecipeCard
+//          id={ i }
+//          name={ e.strMeal }
+//          img={ e.strMealThumb }
+//          key={ e.idMeal }
+//        />
+//      ))}

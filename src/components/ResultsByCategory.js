@@ -7,52 +7,36 @@ export default function ResultsByCategory() {
   const { title, categoryResults } = useContext(AppContext);
 
   const renderCase = () => {
-    if (title === 'meals' && categoryResults.length > 1) {
-      return categoryResults.map((result, index) => (
+    if (title === 'meals' && categoryResults.length >= 1) {
+      return categoryResults.map((e, i) => (
         <Link
-          to={ `/foods/${result.idMeal}` }
-          key={ result.strMeal }
+          to={ `/meals/${e.idMeal}` }
+          key={ e.strMeal }
         >
           <RecipeCard
-            recipe={ result }
-            title={ title }
-            index={ index }
+            id={ i }
+            name={ e.strMeal }
+            img={ e.strMealThumb }
+            key={ e.idMeal }
           />
         </Link>
       ));
     }
 
-    if (title === 'meals' && categoryResults.length === 1) {
-      return (<RecipeCard
-        key={ categoryResults[0].idMeal }
-        recipe={ categoryResults[0] }
-        title={ title }
-        index={ 0 }
-      />);
-    }
-
-    if (title === 'drinks' && categoryResults.length > 1) {
-      return categoryResults.map((result, index) => (
+    if (title === 'drinks' && categoryResults.length >= 1) {
+      return categoryResults.map((e, i) => (
         <Link
-          to={ `/drinks/${result.idDrink}` }
-          key={ result.strDrink }
+          to={ `/drinks/${e.idDrink}` }
+          key={ e.strDrink }
         >
           <RecipeCard
-            recipe={ result }
-            title={ title }
-            index={ index }
+            id={ i }
+            name={ e.strDrink }
+            img={ e.strDrinkThumb }
+            key={ e.idDrink }
           />
         </Link>
       ));
-    }
-
-    if (title === 'drinks' && categoryResults.length === 1) {
-      return (<RecipeCard
-        key={ categoryResults[0].idDrink }
-        recipe={ categoryResults[0] }
-        title={ title }
-        index={ 0 }
-      />);
     }
   };
 

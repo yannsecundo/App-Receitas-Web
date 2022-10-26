@@ -1,49 +1,17 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class RecipeCard extends React.Component {
-  render() {
-    const { recipe, index, title } = this.props;
-
-    return (
-      <div>
-        <div
-          data-testid={ `${index}-recipe-card` }
-        >
-          <img
-            data-testid={ `${index}-card-img` }
-            src={
-              title === 'meals'
-                ? recipe.strMealThumb
-                : recipe.strDrinkThumb
-            }
-            alt={
-              title === 'meals'
-                ? recipe.strMeal
-                : recipe.strDrink
-            }
-          />
-          <h3 data-testid={ `${index}-card-name` }>
-            {
-              title === 'meals'
-                ? recipe.strMeal
-                : recipe.strDrink
-            }
-          </h3>
-        </div>
-      </div>
-
-    );
-  }
+export default function RecipeCard({ id, name, img }) {
+  return (
+    <div data-testid={ `${id}-recipe-card` }>
+      <h3 data-testid={ `${id}-card-name` }>{ name }</h3>
+      <img src={ img } alt={ name } data-testid={ `${id}-card-img` } />
+    </div>
+  );
 }
 
 RecipeCard.propTypes = {
-  index: PropTypes.number,
-  rec: PropTypes.shape({
-    strDrink: PropTypes.string,
-    strDrinkThumb: PropTypes.string,
-    strMeal: PropTypes.string,
-    strMealThumb: PropTypes.string,
-  }),
-  title: PropTypes.string,
-}.isrequired;
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
