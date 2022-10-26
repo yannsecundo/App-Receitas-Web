@@ -4,7 +4,6 @@ import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Recipes from '../pages/Recipes';
 import App from '../App';
-import RenderWithRouter from './renderWithRouter';
 import renderWithContext from './renderWithContext';
 
 const topBtn = 'search-top-btn';

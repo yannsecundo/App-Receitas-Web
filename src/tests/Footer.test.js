@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithContext from './renderWithContext';
 import Recipes from '../pages/Recipes';
-import Profile from '../pages/Profile';
+import ProfilePage from '../pages/ProfilePage';
 
 describe('Testar o componente Footer', () => {
   const footer = 'footer';
@@ -19,7 +19,7 @@ describe('Testar o componente Footer', () => {
   });
 
   it('verifica se os botões estão no path "/profile"', () => {
-    renderWithContext(<Profile />);
+    renderWithContext(<ProfilePage />);
 
     expect(screen.getByTestId(footer)).toBeInTheDocument();
     expect(screen.getByTestId(drinksBtn)).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe('Testar o componente Footer', () => {
   });
 
   it('verifica se no botão Drinks leva para o path "/drinks" ', () => {
-    const { history } = renderWithContext(<Profile />);
+    const { history } = renderWithContext(<ProfilePage />);
 
     const btnDrinks = screen.getByTestId(drinksBtn);
 
@@ -39,7 +39,7 @@ describe('Testar o componente Footer', () => {
   });
 
   it('verifica se no botão Drinks leva para o path "/meals" ', () => {
-    const { history } = renderWithContext(<Profile />);
+    const { history } = renderWithContext(<ProfilePage />);
 
     const btnMeals = screen.getByTestId(mealsBtn);
 
