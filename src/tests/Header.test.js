@@ -4,7 +4,6 @@ import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Recipes from '../pages/Recipes';
 import App from '../App';
-import RenderWithRouter from './renderWithRouter';
 import renderWithContext from './renderWithContext';
 
 const topBtn = 'search-top-btn';
@@ -30,6 +29,7 @@ describe('Teste do Header', () => {
     userEvent.click(input);
   });
 });
+
 describe('Testar se o icone Profile esta direcionando para pagina /profile', () => {
   it('Testar se o header está funcionando', () => {
     renderWithContext(<App />);

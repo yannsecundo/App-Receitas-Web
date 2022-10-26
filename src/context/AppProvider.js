@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
 function AppProvider({ children }) {
+  const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [recipeList, setRecipeList] = useState([]);
   const [category, setCategory] = useState([]);
@@ -51,7 +52,7 @@ function AppProvider({ children }) {
       fetchRecipeCategories(ENDPOINT);
     }
   }, [title]);
-
+  
   return (
     <AppContext.Provider value={ contexto }>
       {children}

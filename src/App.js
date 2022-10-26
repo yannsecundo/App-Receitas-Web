@@ -6,10 +6,10 @@ import RecipeDetails from './pages/RecipeDetails';
 import RecipeDrink from './pages/RecipeDrink';
 import drinkInProgress from './pages/drinkInProgress';
 import mealsInProgress from './pages/mealsInProgress';
-import Profile from './pages/Profile';
 import DoneRecipes from './pages/DoneRecipes';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import Recipes from './pages/Recipes';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/drinks/:id" component={ RecipeDrink } />
           <Route exact path="/drinks/:id/in-progress" component={ drinkInProgress } />
           <Route exact path="/meals/:id/in-progress" component={ mealsInProgress } />
-          <Route exact path="/profile" component={ Profile } />
+          <Route exact path="/profile" component={ ProfilePage } />
           <Route exact path="/done-recipes" component={ DoneRecipes } />
           <Route exact path="/favorite-recipes" component={ FavoriteRecipes } />
         </AppProvider>
