@@ -4,7 +4,7 @@ import { screen, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import renderWithContext from './renderWithContext';
 import App from '../App';
-import Meals from '../pages/Meals';
+import Recipes from '../pages/Recipes';
 
 afterEach(() => jest.clearAllMocks());
 
@@ -33,7 +33,7 @@ describe('Testa o componente SearchBar', () => {
   describe('Testa o componente SearchBar', () => {
     test('Testa se o filtro de ingrediente funciona depois de ser chamado pela API', async () => {
       await act(async () => {
-        renderWithContext(<Meals />);
+        renderWithContext(<Recipes />);
       });
 
       const btnLupa = screen.getByTestId('search-top-btn');

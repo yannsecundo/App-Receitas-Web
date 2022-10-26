@@ -2,7 +2,7 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import Meals from '../pages/Meals';
+import Recipes from '../pages/Recipes';
 import App from '../App';
 import RenderWithRouter from './renderWithRouter';
 import renderWithContext from './renderWithContext';
@@ -12,7 +12,7 @@ const topBtn = 'search-top-btn';
 describe('Teste do Header', () => {
   beforeEach(() => {
     act(() => {
-      RenderWithRouter(<Meals />);
+      RenderWithRouter(<Recipes />);
     });
   });
   it('Testando o componente Header', () => {

@@ -74,12 +74,3 @@ function Recipes() {
   );
 }
 export default withRouter(Recipes);
-
-//      {recipeList && recipeList.slice(0, twelve).map((e, i) => (
-//        <RecipeCard
-//          id={ i }
-//          name={ e.strMeal }
-//          img={ e.strMealThumb }
-//          key={ e.idMeal }
-//        />
-//      ))}

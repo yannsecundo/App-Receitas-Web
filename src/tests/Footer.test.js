@@ -2,8 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithContext from './renderWithContext';
-import Meals from '../pages/Meals';
-import Drinks from '../pages/Drinks';
+import Recipes from '../pages/Recipes';
 import Profile from '../pages/Profile';
 
 describe('Testar o componente Footer', () => {
@@ -11,16 +10,8 @@ describe('Testar o componente Footer', () => {
   const drinksBtn = 'drinks-bottom-btn';
   const mealsBtn = 'meals-bottom-btn';
 
-  it('verifica se os botões estão no path "/meals"', () => {
-    renderWithContext(<Meals />);
-
-    expect(screen.getByTestId(footer)).toBeInTheDocument();
-    expect(screen.getByTestId(drinksBtn)).toBeInTheDocument();
-    expect(screen.getByTestId(mealsBtn)).toBeInTheDocument();
-  });
-
-  it('verifica se os botões estão no path "/drinks"', () => {
-    renderWithContext(<Drinks />);
+  it('verifica se os botões estão no path "/drinks e /meals"', () => {
+    renderWithContext(<Recipes />);
 
     expect(screen.getByTestId(footer)).toBeInTheDocument();
     expect(screen.getByTestId(drinksBtn)).toBeInTheDocument();
