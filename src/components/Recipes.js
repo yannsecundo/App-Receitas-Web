@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router';
 // import { Link } from 'react-router-dom';
-import CategoryControls from './CategoryControls';
+import { CategoryControls } from './CategoryControls';
 import Footer from './Footer';
 import Header from './Header';
 import RecipeCard from './RecipeCard';
